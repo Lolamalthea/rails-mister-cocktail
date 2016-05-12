@@ -1,5 +1,5 @@
 class Ingredient < ActiveRecord::Base
-  validates :name, uniqueness: true
+  validates :name, uniqueness: true, presence: true
   has_many :doses
   before_destroy :destroy_safe
 
@@ -13,3 +13,4 @@ class Ingredient < ActiveRecord::Base
     end
   end
 end
+

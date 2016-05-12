@@ -1,0 +1,5 @@
+<%= simple_form_for @dose do |f| %>
+  <%= f.input :description, input_html: { placeholder: "Description" } %>
+  <%= f.input :ingredient, collection: @ingredients, as: :grouped_select %>
+  <%= f.submit class: "btn btn-danger" %>
+<% end %>

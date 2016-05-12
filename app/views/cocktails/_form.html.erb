@@ -1,0 +1,5 @@
+<%= simple_form_for @cocktail do |f| %>
+  <%= f.input :name, input_html: { placeholder: "Cocktail name" } %>
+  <%= link_to "Add a dose", new_dose_path %>
+  <%= f.submit class: "btn btn-danger" %>
+<% end %>
