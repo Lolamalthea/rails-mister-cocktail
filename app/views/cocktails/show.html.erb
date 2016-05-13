@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-xs-12">
       <h1><%= @cocktail.name %></h1>
+      <%= link_to "Add a dose", new_dose_path %>
 
       <%= link_to "Back", cocktails_path %>
       <%= link_to "Edit", edit_cocktail_path(@cocktail) %>

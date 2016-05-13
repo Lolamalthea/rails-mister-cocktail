@@ -8,6 +8,8 @@ class DosesController < ApplicationController
   end
 
   def new
+    @ingredients = Ingredient.all
+    @cocktail = Cocktail.find(params[:cocktail_id])
     @dose = Dose.new
   end
 
@@ -36,6 +38,6 @@ class DosesController < ApplicationController
   private
 
   def dose_params
-    params.require(:dose).permit(:description, :cocktail, :ingredient)
+    params.require(:dose).permit(:description, :ingredient)
   end
 end
