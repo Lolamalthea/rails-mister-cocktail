@@ -1,16 +1,6 @@
 class Ingredient < ActiveRecord::Base
-  validates :name, uniqueness: true, presence: true
-  has_many :doses
-  before_destroy :destroy_safe
+  validates :name, presence: true, uniqueness: true
 
-  private
-
-  def destroy_safe
-    if self.doses
-      false
-    else
-      true
-    end
-  end
+  has_many :doses, dependent: :destroy
+  has_many :cocktails, through: :doses
 end
-
